@@ -75,8 +75,9 @@ Cuby has three layers:
     ├── visuals.py
     └── constants.py
 
-
+```
 ---
+
 
 Requirements
 
