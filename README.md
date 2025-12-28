@@ -79,7 +79,7 @@ Cuby has three layers:
 ---
 
 
-Requirements
+#### Requirements
 
 Python 3.10+ (recommended)
 
@@ -89,33 +89,33 @@ Microphone + speakers
 
 ---
 
-Installation
-
+#### Installation
+```
 pip install -r requirements.txt
-
+```
 
 ---
 
-Configuration
+#### Configuration
 
 Create a .env file next to main.py:
-
+```
 OPENAI_API_KEY=YOUR_KEY_HERE
 OPENAI_REALTIME_MODEL=gpt-4o-realtime-preview
-
+```
 You can also set these as OS environment variables.
 
 
 ---
 
-Run
-
+#### Run
+```
 python main.py
-
+```
 
 ---
 
-Customization (System Instructions)
+#### Customization (System Instructions)
 
 Cuby is instruction-driven:
 
@@ -133,7 +133,7 @@ This means Cuby is not tied to any specific language—it follows what you defin
 
 ---
 
-Company Knowledge (Local RAG)
+#### Company Knowledge (Local RAG)
 
 Typical pipeline:
 
@@ -151,7 +151,7 @@ Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
 
 ---
 
-Data Storage
+#### Data Storage
 
 Cuby stores everything locally:
 
@@ -167,7 +167,7 @@ data/cuby.log — logs
 
 ---
 
-Security Notes
+#### Security Notes
 
 If the repo is public:
 
@@ -177,14 +177,14 @@ Prefer environment variables or .env for secrets
 
 
 Example .gitignore lines:
-
+```
 data/
 .env
-
+```
 
 ---
 
-Roadmap
+#### Roadmap
 
 [ ] Export conversations to Markdown/PDF
 
@@ -200,7 +200,7 @@ Roadmap
 
 ---
 
-Contributing
+#### Contributing
 
 PRs are welcome.
 For major changes, please open an issue first to discuss the approach.
@@ -208,14 +208,14 @@ For major changes, please open an issue first to discuss the approach.
 
 ---
 
-License
+#### License
 
 Choose a license: MIT
 
 
 ---
 
-Credits
+#### Credits
 
 PySide6
 
