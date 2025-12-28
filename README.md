@@ -81,9 +81,9 @@ Cuby has three layers:
 
 #### Requirements
 
-Python 3.10+ (recommended)
+- Python 3.10+ (recommended)
 
-Microphone + speakers
+- Microphone + speakers
 
 
 
@@ -119,13 +119,13 @@ python main.py
 
 Cuby is instruction-driven:
 
-Define identity (name/persona)
+- Define identity (name/persona)
 
-Set language(s)
+- Set language(s)
 
-Enforce strict rules (format, safety, style)
+- Enforce strict rules (format, safety, style)
 
-Build “task modes” (study assistant, legal helper, ops agent, etc.)
+- Build “task modes” (study assistant, legal helper, ops agent, etc.)
 
 
 This means Cuby is not tied to any specific language—it follows what you define.
@@ -137,13 +137,13 @@ This means Cuby is not tied to any specific language—it follows what you defin
 
 Typical pipeline:
 
-Chunking (sliding window), e.g. chunk_size=800 words and overlap=200
+- Chunking (sliding window), e.g. chunk_size=800 words and overlap=200
 
-Embeddings via multilingual Sentence Transformers
+- Embeddings via multilingual Sentence Transformers
 
-Retrieval: top-k similar chunks
+- Retrieval: top-k similar chunks
 
-Response: model answers with retrieved context injected
+- Response: model answers with retrieved context injected
 
 
 Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
@@ -155,32 +155,13 @@ Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
 
 Cuby stores everything locally:
 
-data/conversations.json — conversations
+- data/conversations.json — conversations
 
-data/settings.json — settings (may include credentials)
+- data/settings.json — settings (may include credentials)
 
-data/company_knowledge.json — RAG store (chunks + embeddings)
+- data/company_knowledge.json — RAG store (chunks + embeddings)
 
-data/cuby.log — logs
-
-
-
----
-
-#### Security Notes
-
-If the repo is public:
-
-Add data/ (or at least data/settings.json) to .gitignore
-
-Prefer environment variables or .env for secrets
-
-
-Example .gitignore lines:
-```
-data/
-.env
-```
+- data/cuby.log — logs
 
 ---
 
@@ -217,12 +198,12 @@ Choose a license: MIT
 
 #### Credits
 
-PySide6
+- PySide6
 
-sounddevice
+- sounddevice
 
-websockets
+- websockets
 
-sentence-transformers
+- sentence-transformers
 
-OpenAI Realtime API
+- OpenAI Realtime API
