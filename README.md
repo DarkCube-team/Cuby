@@ -178,20 +178,12 @@ Cuby stores everything locally:
 - [ ] Plugin/tool system for internal workflows
 
 
-
 ---
 
 #### Contributing
 
 PRs are welcome.
 For major changes, please open an issue first to discuss the approach.
-
-
----
-
-#### License
-
-Choose a license: MIT
 
 
 ---
