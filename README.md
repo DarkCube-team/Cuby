@@ -185,6 +185,9 @@ Cuby stores everything locally:
 PRs are welcome.
 For major changes, please open an issue first to discuss the approach.
 
+---
+#### License
+MIT — see `LICENSE`.
 
 ---
 
