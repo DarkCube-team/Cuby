@@ -25,7 +25,7 @@ Cuby turns those capabilities into a **personal workspace**:
 
 - **Real-time voice conversations** (low-latency speech-to-speech)
 - **Company Knowledge (Local RAG)**  
-  Add documents (PDF/DOCX/TXT/MD), retrieve relevant context, and answer grounded in your files.
+  Add documents (PDF/DOCX/TXT), retrieve relevant context, and answer grounded in your files.
 - **Full customization via System Instructions**  
   Rename the assistant, change tone, enforce rules, pick any language, and create specialized “agents.”
 - **Conversation management**  
@@ -98,7 +98,7 @@ pip install -r requirements.txt
 
 #### Configuration
 
-Create a .env file next to main.py:
+Create a `.env` file next to `main.py`:
 ```
 OPENAI_API_KEY=YOUR_KEY_HERE
 OPENAI_REALTIME_MODEL=gpt-4o-realtime-preview
@@ -137,7 +137,7 @@ This means Cuby is not tied to any specific language—it follows what you defin
 
 Typical pipeline:
 
-- Chunking (sliding window), e.g. chunk_size=800 words and overlap=200
+- Chunking (sliding window), e.g. `chunk_size=800` words and `overlap=200`
 
 - Embeddings via multilingual Sentence Transformers
 
@@ -146,7 +146,7 @@ Typical pipeline:
 - Response: model answers with retrieved context injected
 
 
-Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
+Supported formats: `txt, docx, pdf`
 
 
 ---
@@ -155,27 +155,27 @@ Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
 
 Cuby stores everything locally:
 
-- *data/conversations.json* — conversations
+- `data/conversations.json` — conversations
 
-- *data/settings.json* — settings (may include credentials)
+- `data/settings.json` — settings (may include credentials)
 
-- *data/company_knowledge.json* — RAG store (chunks + embeddings)
+- `data/company_knowledge.json` — RAG store (chunks + embeddings)
 
-- *data/cuby.log* — logs
+- `data/cuby.log` — logs
 
 ---
 
 #### Roadmap
 
-[ ] Export conversations to Markdown/PDF
+- [ ] Export conversations to Markdown/PDF
 
-[ ] Multiple instruction profiles (“agents”)
+- [ ] Multiple instruction profiles (“agents”)
 
-[ ] Better RAG file management (status, rebuild timestamps, indexing indicators)
+- [ ] Better RAG file management (status, rebuild timestamps, indexing indicators)
 
-[ ] Streaming transcript UI (delta rendering)
+- [ ] Streaming transcript UI (delta rendering)
 
-[ ] Plugin/tool system for internal workflows
+- [ ] Plugin/tool system for internal workflows
 
 
 
