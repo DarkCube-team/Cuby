@@ -155,13 +155,13 @@ Supported formats: txt, md, log, docx, pdf (depending on installed libraries).
 
 Cuby stores everything locally:
 
-- data/conversations.json — conversations
+- *data/conversations.json* — conversations
 
-- data/settings.json — settings (may include credentials)
+- *data/settings.json* — settings (may include credentials)
 
-- data/company_knowledge.json — RAG store (chunks + embeddings)
+- *data/company_knowledge.json* — RAG store (chunks + embeddings)
 
-- data/cuby.log — logs
+- *data/cuby.log* — logs
 
 ---
 
