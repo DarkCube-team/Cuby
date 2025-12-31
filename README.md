@@ -198,3 +198,6 @@ MIT — see [LICENSE](LICENSE).
 * sentence-transformers
 * OpenAI Realtime API
 
+---
+
+Built with ❤️ by DarkCube
