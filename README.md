@@ -7,30 +7,45 @@ Cuby is a desktop assistant that lets you run advanced AI features from your own
 
 ---
 
+## Demo & Screenshots
+
+### Screenshots
+
+![Cuby Screenshot 07](assets/screenshots/03.png)
+|                                                  |                                                  |                                                  |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| ![Cuby Screenshot 01](assets/screenshots/01.png) | ![Cuby Screenshot 02](assets/screenshots/02.png) | ![Cuby Screenshot 03](assets/screenshots/07.png) |
+| ![Cuby Screenshot 04](assets/screenshots/04.png) | ![Cuby Screenshot 05](assets/screenshots/05.png) | ![Cuby Screenshot 06](assets/screenshots/06.png) |
+|                                                  |                                                  |                                                  |
+
+---
+
 ## What Cuby Solves
 
 Most AI chat apps (even paid plans) can impose practical caps on:
-- Real-time voice sessions (time/usage limits)
-- Document-based answering (file count/size limits)
-- Customization (restricted system behavior)
+
+* Real-time voice sessions (time/usage limits)
+* Document-based answering (file count/size limits)
+* Customization (restricted system behavior)
 
 Cuby turns those capabilities into a **personal workspace**:
-- You connect once in Settings
-- You control the assistant’s behavior via instructions
-- You use features based on your own usage, not product plan boundaries
+
+* You connect once in Settings
+* You control the assistant’s behavior via instructions
+* You use features based on your own usage, not product plan boundaries
 
 ---
 
 ## Highlights
 
-- **Real-time voice conversations** (low-latency speech-to-speech)
-- **Company Knowledge (Local RAG)**  
+* **Real-time voice conversations** (low-latency speech-to-speech)
+* **Company Knowledge (Local RAG)**
   Add documents (PDF/DOCX/TXT), retrieve relevant context, and answer grounded in your files.
-- **Full customization via System Instructions**  
+* **Full customization via System Instructions**
   Rename the assistant, change tone, enforce rules, pick any language, and create specialized “agents.”
-- **Conversation management**  
+* **Conversation management**
   List, search, rename, delete, and continue chats.
-- **Modern desktop UI**  
+* **Modern desktop UI**
   Glassmorphism, dark/light theme, waveform visualizer, and a branded splash screen.
 
 ---
@@ -38,9 +53,10 @@ Cuby turns those capabilities into a **personal workspace**:
 ## How It Works (High-Level)
 
 Cuby has three layers:
-1. **UI (PySide6)** — the desktop interface, settings, and conversation view  
-2. **Realtime Client** — streaming audio in/out + transcript events  
-3. **Local Knowledge Layer (RAG)** — chunking + embeddings + top-k retrieval for grounded answers  
+
+1. **UI (PySide6)** — the desktop interface, settings, and conversation view
+2. **Realtime Client** — streaming audio in/out + transcript events
+3. **Local Knowledge Layer (RAG)** — chunking + embeddings + top-k retrieval for grounded answers
 
 ---
 
@@ -74,131 +90,111 @@ Cuby has three layers:
     ├── theme.py
     ├── visuals.py
     └── constants.py
-
 ```
----
-
-
-#### Requirements
-
-- Python 3.10+ (recommended)
-
-- Microphone + speakers
-
-
 
 ---
 
-#### Installation
-```
+## Requirements
+
+* Python 3.10+ (recommended)
+* Microphone + speakers
+
+---
+
+## Installation
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-#### Configuration
+## Configuration
 
 Create a `.env` file next to `main.py`:
-```
+
+```env
 OPENAI_API_KEY=YOUR_KEY_HERE
 OPENAI_REALTIME_MODEL=gpt-4o-realtime-preview
 ```
-You can also set these as OS environment variables.
 
+You can also set these as OS environment variables.
 
 ---
 
-#### Run
-```
+## Run
+
+```bash
 python main.py
 ```
 
 ---
 
-#### Customization (System Instructions)
+## Customization (System Instructions)
 
 Cuby is instruction-driven:
 
-- Define identity (name/persona)
-
-- Set language(s)
-
-- Enforce strict rules (format, safety, style)
-
-- Build “task modes” (study assistant, legal helper, ops agent, etc.)
-
+* Define identity (name/persona)
+* Set language(s)
+* Enforce strict rules (format, safety, style)
+* Build “task modes” (study assistant, legal helper, ops agent, etc.)
 
 This means Cuby is not tied to any specific language—it follows what you define.
 
-
 ---
 
-#### Company Knowledge (Local RAG)
+## Company Knowledge (Local RAG)
 
 Typical pipeline:
 
-- Chunking (sliding window), e.g. `chunk_size=800` words and `overlap=200`
+* Chunking (sliding window), e.g. `chunk_size=800` words and `overlap=200`
+* Embeddings via multilingual Sentence Transformers
+* Retrieval: top-k similar chunks
+* Response: model answers with retrieved context injected
 
-- Embeddings via multilingual Sentence Transformers
-
-- Retrieval: top-k similar chunks
-
-- Response: model answers with retrieved context injected
-
-
-Supported formats: `txt, docx, pdf`
-
+Supported formats: `txt`, `docx`, `pdf`
 
 ---
 
-#### Data Storage
+## Data Storage
 
 Cuby stores everything locally:
 
-- `data/conversations.json` — conversations
-
-- `data/settings.json` — settings (may include credentials)
-
-- `data/company_knowledge.json` — RAG store (chunks + embeddings)
-
-- `data/cuby.log` — logs
+* `data/conversations.json` — conversations
+* `data/settings.json` — settings (may include credentials)
+* `data/company_knowledge.json` — RAG store (chunks + embeddings)
+* `data/cuby.log` — logs
 
 ---
 
-#### Roadmap
+## Roadmap
 
-- [ ] Export conversations to Markdown/PDF
-
-- [ ] Multiple instruction profiles (“agents”)
-
-- [ ] Better RAG file management (status, rebuild timestamps, indexing indicators)
-
-- [ ] Streaming transcript UI (delta rendering)
-
-- [ ] Plugin/tool system for internal workflows
-
+* [ ] Export conversations to Markdown/PDF
+* [ ] Multiple instruction profiles (“agents”)
+* [ ] Better RAG file management (status, rebuild timestamps, indexing indicators)
+* [ ] Streaming transcript UI (delta rendering)
+* [ ] Plugin/tool system for internal workflows
 
 ---
 
-#### Contributing
+## Contributing
 
 PRs are welcome.
 For major changes, please open an issue first to discuss the approach.
 
 ---
-#### License
+
+## License
+
 MIT — see `LICENSE`.
 
 ---
 
-#### Credits
+## Credits
 
-- PySide6
+* PySide6
+* sounddevice
+* websockets
+* sentence-transformers
+* OpenAI Realtime API
 
-- sounddevice
-
-- websockets
-
-- sentence-transformers
-
-- OpenAI Realtime API
